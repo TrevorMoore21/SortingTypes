@@ -17,15 +17,12 @@ public class AllSorts
 				
 				int[] elements = new int[numOfNum];
 			
-				
 				for (int t : elements)
 					{
 						double doubleRando = Math.random() * 99;
 						int rando = (int)doubleRando;
 						t = rando;
 					}
-				
-				
 			}
 		
 		
@@ -33,7 +30,7 @@ public class AllSorts
 		public static void selectionSort(int[] elements)
 			{
 				
-				 long start = System.nanoTime();
+				long start = System.nanoTime();
 		
 			 for (int i = 0; i < elements.length - 1; i++)
 			 	{

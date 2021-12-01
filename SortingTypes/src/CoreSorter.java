@@ -2,9 +2,13 @@
 public class CoreSorter
 	{
 
+	
 		public static void main(String[] args)
 			{
 				
+				//UserInput.questions();
+				
+
 				
 				SelectionSort.selectionSort(int[] elements);
 				InsertionSort.insertionSort(int[] elements);
@@ -13,13 +17,5 @@ public class CoreSorter
 				BubbleSort.bubbleSort(int[] elements);
 				
 			}
-
-		
-//		long start = System.nanoTime();
-//		 // some time passes
-//		 long end = System.nanoTime();
-//		 long elapsedTime = end - start;
-		
-		
 		
 	}

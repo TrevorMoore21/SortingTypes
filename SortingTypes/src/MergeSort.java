@@ -4,6 +4,8 @@ public class MergeSort
 
 		private static void merge(int[] elements, int from, int mid, int to, int[] temp)
 			{
+				 long start = System.nanoTime();
+				
 				int i = from;
 			 	int j = mid + 1;
 			 	int k = from;
@@ -39,5 +41,9 @@ public class MergeSort
 			 			{
 			 				elements[k] = temp[k];
 			 			}
+			 		
+					 long end = System.nanoTime();
+					 long elapsedTime = end - start;
+					 System.out.println(elapsedTime);
 			}
 	}

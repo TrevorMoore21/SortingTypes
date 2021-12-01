@@ -3,6 +3,8 @@ public class BubbleSort
 	{
 		static void bubbleSort(int[] elements) 
 			{  
+				 long start = System.nanoTime();
+				 
 		       int n = elements.length;  
 		       int temp = 0;  
 		       for(int i=0; i < n; i++)
@@ -19,6 +21,9 @@ public class BubbleSort
 		    			   }  
 		    	   }  
 		  
+				 long end = System.nanoTime();
+				 long elapsedTime = end - start;
+				 System.out.println(elapsedTime);
 			}  
 		
 	}

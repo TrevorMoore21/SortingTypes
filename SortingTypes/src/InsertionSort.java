@@ -4,6 +4,8 @@ public class InsertionSort
 
 		public static void insertionSort(int[ ] elements)
 			{
+				long start = System.nanoTime();
+
 			 	for (int i = 1; i < elements.length; i++)
 			 		{
 			 			int temp = elements[i];
@@ -15,5 +17,9 @@ public class InsertionSort
 			 				}
 			 			elements[possibleIndex] = temp;
 			 		}
+			 	
+				 long end = System.nanoTime();
+				 long elapsedTime = end - start;
+				 System.out.println(elapsedTime);
 			}
 	}

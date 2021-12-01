@@ -6,8 +6,15 @@ public class QuickSort
 		
 		static int [ ] qsort(int elements[])
 			{
+				 long start = System.nanoTime();
+				 
 				qs(elements, 0, elements.length - 1);
+				 
+				 long end = System.nanoTime();
+				 long elapsedTime = end - start;
+				 System.out.println(elapsedTime);
 				return elements;
+				
 			}
 
 		private static void qs(int elements[], int left, int right)

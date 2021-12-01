@@ -8,7 +8,10 @@ public class CoreSorter
 				
 				//UserInput.questions();
 				
-
+				
+				
+				
+				
 				
 				SelectionSort.selectionSort(int[] elements);
 				InsertionSort.insertionSort(int[] elements);

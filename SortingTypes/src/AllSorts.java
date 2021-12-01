@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class AllSorts
 	{
-		static int[] elements;
+		public static int[] elements;
 		
 		//asking the questions and fill array--> elements
 		public static void questions()
@@ -13,9 +13,9 @@ public class AllSorts
 				int numRun = userStringInput.nextInt();
 				
 				System.out.println("How many integers would you like to sort through?");
-				int numOfNum = userStringInput.nextInt();
+				int arraySize = userStringInput.nextInt();
 				
-				int[] elements = new int[numOfNum];
+				int[] elements = new int[arraySize];
 			
 				for (int t : elements)
 					{
@@ -23,11 +23,15 @@ public class AllSorts
 						int rando = (int)doubleRando;
 						t = rando;
 					}
+				System.out.println(elements);
+				
+				System.out.println("Number of simulations: " + numRun);
+				System.out.println("Array size: " + arraySize);
 			}
 		
 		
 		//selection sort
-		public static void selectionSort(int[] elements)
+		public static void selectionSort()
 			{
 				
 				long start = System.nanoTime();
@@ -54,7 +58,7 @@ public class AllSorts
 			}
 		
 		//insertion sort
-		public static void insertionSort(int[ ] elements)
+		public static void insertionSort()
 			{
 				long start = System.nanoTime();
 
@@ -76,11 +80,11 @@ public class AllSorts
 			}
 		
 		//quick sort
-		static int [ ] qsort(int elements[])
+		static int [ ] qsort()
 			{
 				 long start = System.nanoTime();
 				 
-				qs(elements, 0, elements.length - 1);
+				qs(0, elements.length - 1);
 				 
 				 long end = System.nanoTime();
 				 long elapsedTime = end - start;
@@ -89,7 +93,7 @@ public class AllSorts
 				
 			}
 
-		private static void qs(int elements[], int left, int right)
+		private static void qs(int left, int right)
 			{
 				int i, j;
 				int pivot, temp;
@@ -119,14 +123,14 @@ public class AllSorts
 				while (i <= j);
 			
 				if (left < j)
-					qs (elements, left, j);
+					qs (left, j);
 			
 				if (i < right)
-					qs (elements, i, right);
+					qs (i, right);
 			}
 		
 		//merge sort
-		private static void merge(int[] elements, int from, int mid, int to, int[] temp)
+		private static void merge(int from, int mid, int to, int[] temp)
 			{
 				 long start = System.nanoTime();
 				
@@ -172,7 +176,7 @@ public class AllSorts
 			}
 		
 		//bubble sort
-		static void bubbleSort(int[] elements) 
+		static void bubbleSort() 
 			{  
 				 long start = System.nanoTime();
 				 

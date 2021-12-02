@@ -6,11 +6,11 @@ public class CoreSorter
 		public static void main(String[] args)
 			{
 				AllSorts.questions();
-				AllSorts.selectionSort();
-				AllSorts.insertionSort();
-				AllSorts.qsort();
-				//AllSorts.merge(int from, int mid, int to, int[] temp);
-				AllSorts.bubbleSort();
+				AllSorts.selectionSort(AllSorts.selSort);
+				AllSorts.insertionSort(AllSorts.inSort);
+				AllSorts.qsort(AllSorts.qSort);
+				//AllSorts.merge(AllSorts.mergeSort,int from, int mid, int to, int[] temp);
+				AllSorts.bubbleSort(AllSorts.bubSort);
 				
 				
 				

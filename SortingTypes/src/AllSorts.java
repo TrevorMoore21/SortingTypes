@@ -2,7 +2,12 @@ import java.util.Scanner;
 
 public class AllSorts
 	{
-		public static int[] elements;
+		public static int[] selSort;
+		public static int[] inSort;
+		public static int[] qSort;
+		public static int[] mergeSort;
+		public static int[] bubSort;
+		
 		
 		//asking the questions and fill array--> elements
 		public static void questions()
@@ -15,81 +20,115 @@ public class AllSorts
 				System.out.println("How many integers would you like to sort through?");
 				int arraySize = userStringInput.nextInt();
 				
-				int[] elements = new int[arraySize];
-			
-				for (int t : elements)
-					{
-						double doubleRando = Math.random() * 99;
-						int rando = (int)doubleRando;
-						t = rando;
-					}
-				System.out.println(elements);
+//				int[] elements = new int[arraySize];
 				
+				 selSort = new int[arraySize];
+				 inSort = new int[arraySize];
+				 qSort = new int[arraySize];
+				 mergeSort = new int[arraySize];
+				 bubSort = new int[arraySize];
+			
+//			for (int i = 0; i < elements.length; i++)
+//					{
+//					double doubleRando = Math.random() * 99;
+//						int rando = (int)doubleRando;
+//						elements[i] = rando;
+//					}
+			
+			for (int j = 0; j <= arraySize; j++)
+				{
+					double doubleRando = Math.random() * 99;
+					int rando = (int)doubleRando;
+//					t = rando;
+					
+					for (int s : selSort)
+						{
+							s = rando;
+						}
+					for (int i : inSort)
+						{
+							i = rando;
+						}
+					for (int q : qSort)
+						{
+							q = rando;
+						}
+					for (int m : mergeSort)
+						{
+							m = rando;
+						}
+					for (int b : bubSort)
+						{
+							b = rando;
+						}
+				}
+				
+				//System.out.println("length==" + selSort.length);
 				System.out.println("Number of simulations: " + numRun);
 				System.out.println("Array size: " + arraySize);
 			}
 		
 		
 		//selection sort
-		public static void selectionSort()
+		public static void selectionSort(int[] selSort)
 			{
 				
-				long start = System.nanoTime();
+				double start = System.nanoTime();
 		
-			 for (int i = 0; i < elements.length - 1; i++)
+			 for (int i = 0; i < selSort.length - 1; i++)
 			 	{
 			 		int minIndex = i;
-			 		for (int k = i + 1; k < elements.length; k++)
+			 		for (int k = i + 1; k < selSort.length; k++)
 			 			{
-			 				if (elements[k] < elements[minIndex])
+			 				if (selSort[k] < selSort[minIndex])
 			 					{
 			 						minIndex = k;
 			 					}
 			 			}
 			 		
-			 		int precious = elements[i];
-			 		elements[i] = elements[minIndex];
-			 		elements[minIndex] = precious;
+			 		int precious = selSort[i];
+			 		selSort[i] = selSort[minIndex];
+			 		selSort[minIndex] = precious;
 			 		}
 			 
-			 long end = System.nanoTime();
-			 long elapsedTime = end - start;
-			 System.out.println(elapsedTime);
+			 double end = System.nanoTime();
+			 double elapsedTime = (end - start) / 1000000;
+			 System.out.println("Selection Sort run time:              " + elapsedTime);
 			}
 		
 		//insertion sort
-		public static void insertionSort()
+		public static void insertionSort(int[] inSort)
 			{
-				long start = System.nanoTime();
+				double start = System.nanoTime();
 
-			 	for (int i = 1; i < elements.length; i++)
+			 	for (int i = 1; i < inSort.length; i++)
 			 		{
-			 			int temp = elements[i];
+			 			int temp = inSort[i];
 			 			int possibleIndex = i;
-			 			while (possibleIndex > 0 && temp < elements[possibleIndex - 1])
+			 			while (possibleIndex > 0 && temp < inSort[possibleIndex - 1])
 			 				{
-			 					elements[possibleIndex] = elements[possibleIndex - 1];
+			 					inSort[possibleIndex] = inSort[possibleIndex - 1];
 			 					possibleIndex--;
 			 				}
-			 			elements[possibleIndex] = temp;
+			 			inSort[possibleIndex] = temp;
 			 		}
 			 	
-				 long end = System.nanoTime();
-				 long elapsedTime = end - start;
-				 System.out.println(elapsedTime);
+			 	double end = System.nanoTime();
+			 	double elapsedTime = (end - start) / 1000000;
+				 System.out.println("Insertion Sort run time:              " + elapsedTime);
 			}
 		
 		//quick sort
-		static int [ ] qsort()
+		static int [ ] qsort(int[] qSort)
 			{
-				 long start = System.nanoTime();
+				double start = System.nanoTime();
 				 
-				qs(0, elements.length - 1);
+				qs(0, qSort.length - 1);
 				 
-				 long end = System.nanoTime();
-				 long elapsedTime = end - start;
-				 System.out.println(elapsedTime);
-				return elements;
+				double end = System.nanoTime();
+				double elapsedTime = (end - start) / 1000000;
+				 System.out.println("Quick Sort run time:                  " + elapsedTime);
+				return qSort;
 				
 			}
 
@@ -99,23 +138,23 @@ public class AllSorts
 				int pivot, temp;
 				i = left;
 				j = right;
-				pivot = elements [(left + right) / 2];
+				pivot = qSort [(left + right) / 2];
 			
 				do
 					{
-						while ((elements [i] < pivot) && (i < right))
+						while ((qSort [i] < pivot) && (i < right))
 							i++;
 						
-				while ((pivot < elements [j]) && (j > left))
+				while ((pivot < qSort [j]) && (j > left))
 					{
 						j--;	
 					}
 					
 				if (i <= j)
 					{
-						temp = elements [i];
-						elements [i] = elements [j];
-						elements [j] = temp;
+						temp = qSort [i];
+						qSort [i] = qSort [j];
+						qSort [j] = temp;
 						i++;
 						j--;
 					}
@@ -130,75 +169,75 @@ public class AllSorts
 			}
 		
 		//merge sort
-		private static void merge(int from, int mid, int to, int[] temp)
+		private static void merge(int[] mergeSort, int from, int mid, int to, int[] temp)
 			{
-				 long start = System.nanoTime();
+				double start = System.nanoTime();
 				
-				int i = from;
-			 	int j = mid + 1;
-			 	int k = from;
-			 	while (i <= mid && j <= to)
-			 		{
-			 			if (elements[i] < elements[j])
-			 				{
-			 					temp[k] = elements[i];
-			 					i++;
-			 				}
-			 			else
-			 				{
-			 					temp[k] = elements[j];
-			 					j++;
-			 				}
-			 			k++;
-			 		}
+				 int i = from;
+				 	int j = mid + 1;
+				 	int k = from;
+				 	while (i <= mid && j <= to)
+				 		{
+				 		if (mergeSort[i] < mergeSort[j])
+				 	{
+				 temp[k] = mergeSort[i];
+				 i++;
+				 }
+				 		else
+				{
+				 			temp[k] = mergeSort[j];
+				 j++;
+				 }
+				 k++;
+				 		}
 
-			 		while (i <= mid)
-			 			{
-			 				temp[k] = elements[i];
-			 				i++;
-			 				k++;
-			 			}
+				 while (i <= mid)
+				 		{
+				 		temp[k] = mergeSort[i];
+				 i++;
+				 k++;
+				 }
 
-			 		while (j <= to)
-			 			{
-			 				temp[k] = elements[j];
-			 				j++;
-			 				k++;
-			 			}
-			 		for (k = from; k <= to; k++)
-			 			{
-			 				elements[k] = temp[k];
-			 			}
-			 		
-					 long end = System.nanoTime();
-					 long elapsedTime = end - start;
-					 System.out.println(elapsedTime);
+				 while (j <= to)
+				 {
+				 temp[k] = mergeSort[j];
+				 j++;
+				 k++;
+				 }
+				 	for (k = from; k <= to; k++)
+				 		{
+				 			mergeSort[k] = temp[k];
+				 }
+
+				 	double end = System.nanoTime();
+				 	double elapsedTime = (end - start) / 1000000;
+					 System.out.println("Merge Sort run time:              " + elapsedTime);
 			}
 		
 		//bubble sort
-		static void bubbleSort() 
+		static void bubbleSort(int[] bubSort) 
 			{  
-				 long start = System.nanoTime();
+				double start = System.nanoTime();
 				 
-		       int n = elements.length;  
+		       int n = bubSort.length;  
 		       int temp = 0;  
 		       for(int i=0; i < n; i++)
 		    	   {  
 		    		   for(int j=1; j < (n-i); j++)
 		    			   {  
-		    				   if(elements[j-1] > elements[j])
+		    				   if(bubSort[j-1] > bubSort[j])
 		    					   {  
-		    						   temp = elements[j-1];  
-		    						   elements[j-1] = elements[j];  
-		    						   elements[j] = temp;  
+		    						   temp = bubSort[j-1];  
+		    						   bubSort[j-1] = bubSort[j];  
+		    						   bubSort[j] = temp;  
 		    					   }  
 		                          
 		    			   }  
 		    	   }  
 		  
-				 long end = System.nanoTime();
-				 long elapsedTime = end - start;
-				 System.out.println(elapsedTime);
+		       double end = System.nanoTime();
+		       double elapsedTime = (end - start) / 1000000;
+				 System.out.println("Bubble Sort run time:                 " + elapsedTime);
 			}  
 		
 		

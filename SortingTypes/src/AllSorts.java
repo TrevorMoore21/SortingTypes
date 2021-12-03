@@ -7,6 +7,7 @@ public class AllSorts
 		public static int[] qSort;
 		public static int[] mergeSort;
 		public static int[] bubSort;
+		public static int arraySize;
 		
 		
 		//asking the questions and fill array--> elements
@@ -18,7 +19,7 @@ public class AllSorts
 				int numRun = userStringInput.nextInt();
 				
 				System.out.println("How many integers would you like to sort through?");
-				int arraySize = userStringInput.nextInt();
+				 arraySize = userStringInput.nextInt();
 				
 //				int[] elements = new int[arraySize];
 				
@@ -169,45 +170,46 @@ public class AllSorts
 			}
 		
 		//merge sort
-		private static void merge(int[] mergeSort, int from, int mid, int to, int[] temp)
+		private static void merge(int[] mergeSort, int arraySize)
 			{
 				double start = System.nanoTime();
 				
-				 int i = from;
-				 	int j = mid + 1;
-				 	int k = from;
-				 	while (i <= mid && j <= to)
-				 		{
-				 		if (mergeSort[i] < mergeSort[j])
-				 	{
-				 temp[k] = mergeSort[i];
-				 i++;
-				 }
-				 		else
-				{
-				 			temp[k] = mergeSort[j];
-				 j++;
-				 }
-				 k++;
-				 		}
+				if (arraySize < 2)
+					{
+						return;
+					}
 
-				 while (i <= mid)
-				 		{
-				 		temp[k] = mergeSort[i];
-				 i++;
-				 k++;
-				 }
+				int mid = arraySize / 2;
+				int[] left_mergeSort = new int[mid];
+				int[] right_mergeSort = new int[arraySize - mid];
 
-				 while (j <= to)
-				 {
-				 temp[k] = mergeSort[j];
-				 j++;
-				 k++;
-				 }
-				 	for (k = from; k <= to; k++)
-				 		{
-				 			mergeSort[k] = temp[k];
-				 }
+				// Dividing array into two and copying into two separate arrays
+				int k = 0;
+				for (int i = 0; i < arraySize; ++i)
+					{
+						if (i < mid)
+							{
+								left_mergeSort[i] = mergeSort[i];
+							} 
+						else
+							{
+								right_mergeSort[k] = mergeSort[i];
+								k = k + 1;
+							}
+					}
+				// Recursively calling the function to divide the subarrays further
+				merge(left_mergeSort, mid);
+				merge(right_mergeSort, arraySize - mid);
+				// Calling the merge method on each subdivision
+				merge(left_mergeSort, mid);
+			
+
+				
+				
+				
+				
+				
+				
 
 				 	double end = System.nanoTime();
 				 	double elapsedTime = (end - start) / 1000000;

@@ -9,7 +9,7 @@ public class CoreSorter
 				AllSorts.selectionSort(AllSorts.selSort);
 				AllSorts.insertionSort(AllSorts.inSort);
 				AllSorts.qsort(AllSorts.qSort);
-				//AllSorts.merge(AllSorts.mergeSort,int from, int mid, int to, int[] temp);
+				//AllSorts.merge(AllSorts.mergeSort, AllSorts.arraySize);
 				AllSorts.bubbleSort(AllSorts.bubSort);
 				
 				

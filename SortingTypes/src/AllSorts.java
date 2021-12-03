@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class AllSorts
 	{
@@ -9,6 +11,7 @@ public class AllSorts
 		public static int[] bubSort;
 		public static int arraySize;
 		
+		public static ArrayList<FinalTimes> time = new ArrayList<FinalTimes>();
 		
 		//asking the questions and fill array--> elements
 		public static void questions()
@@ -21,26 +24,16 @@ public class AllSorts
 				System.out.println("How many integers would you like to sort through?");
 				 arraySize = userStringInput.nextInt();
 				
-//				int[] elements = new int[arraySize];
-				
 				 selSort = new int[arraySize];
 				 inSort = new int[arraySize];
 				 qSort = new int[arraySize];
 				 mergeSort = new int[arraySize];
 				 bubSort = new int[arraySize];
 			
-//			for (int i = 0; i < elements.length; i++)
-//					{
-//					double doubleRando = Math.random() * 99;
-//						int rando = (int)doubleRando;
-//						elements[i] = rando;
-//					}
-			
 			for (int j = 0; j <= arraySize; j++)
 				{
 					double doubleRando = Math.random() * 99;
 					int rando = (int)doubleRando;
-//					t = rando;
 					
 					for (int s : selSort)
 						{
@@ -94,7 +87,8 @@ public class AllSorts
 			 
 			 double end = System.nanoTime();
 			 double elapsedTime = (end - start) / 1000000;
-			 System.out.println("Selection Sort run time:              " + elapsedTime);
+			 time.add(new FinalTimes("Selection Sort", elapsedTime));
+			 //System.out.println("Selection Sort run time:              " + elapsedTime);
 			}
 		
 		//insertion sort
@@ -116,7 +110,8 @@ public class AllSorts
 			 	
 			 	double end = System.nanoTime();
 			 	double elapsedTime = (end - start) / 1000000;
-				 System.out.println("Insertion Sort run time:              " + elapsedTime);
+			 	time.add(new FinalTimes("Insertion Sort", elapsedTime));
+				// System.out.println("Insertion Sort run time:              " + elapsedTime);
 			}
 		
 		//quick sort
@@ -128,7 +123,8 @@ public class AllSorts
 				 
 				double end = System.nanoTime();
 				double elapsedTime = (end - start) / 1000000;
-				 System.out.println("Quick Sort run time:                  " + elapsedTime);
+				time.add(new FinalTimes("Quick Sort", elapsedTime));
+				// System.out.println("Quick Sort run time:                  " + elapsedTime);
 				return qSort;
 				
 			}
@@ -170,7 +166,7 @@ public class AllSorts
 			}
 		
 		//merge sort
-		private static void merge(int[] mergeSort, int arraySize)
+		static void merge(int[] mergeSort, int arraySize)
 			{
 				double start = System.nanoTime();
 				
@@ -203,17 +199,10 @@ public class AllSorts
 				// Calling the merge method on each subdivision
 				merge(left_mergeSort, mid);
 			
-
-				
-				
-				
-				
-				
-				
-
 				 	double end = System.nanoTime();
 				 	double elapsedTime = (end - start) / 1000000;
-					 System.out.println("Merge Sort run time:              " + elapsedTime);
+				 	time.add(new FinalTimes("Merge Sort", elapsedTime));
+					 //System.out.println("Merge Sort run time:              " + elapsedTime);
 			}
 		
 		//bubble sort
@@ -239,7 +228,8 @@ public class AllSorts
 		  
 		       double end = System.nanoTime();
 		       double elapsedTime = (end - start) / 1000000;
-				 System.out.println("Bubble Sort run time:                 " + elapsedTime);
+		       time.add(new FinalTimes("Bubble Sort", elapsedTime));
+				// System.out.println("Bubble Sort run time:                 " + elapsedTime);
 			}  
 		
 		

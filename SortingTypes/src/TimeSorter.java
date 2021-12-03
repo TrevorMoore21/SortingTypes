@@ -1,11 +1,19 @@
+import java.util.Collections;
 import java.util.Comparator;
 
-public class TimeSorter Comparator<FinalTimes>
+public class TimeSorter implements Comparator<FinalTimes>
 	{
 
-		public int compare (elapsedTime)
+		public int compare (FinalTimes t1, FinalTimes t2)
 		{
-			if()
+			if(t1.getFinalTime() < t2.getFinalTime())
+				{
+					return 1;
+				}
+			else
+				{
+					return -1;
+				}
 			
 		}
 		

@@ -1,3 +1,4 @@
+import java.util.Collections;
 
 public class CoreSorter
 	{
@@ -9,10 +10,9 @@ public class CoreSorter
 				AllSorts.selectionSort(AllSorts.selSort);
 				AllSorts.insertionSort(AllSorts.inSort);
 				AllSorts.qsort(AllSorts.qSort);
-				//AllSorts.merge(AllSorts.mergeSort, AllSorts.arraySize);
+				AllSorts.merge(AllSorts.mergeSort, AllSorts.mergeSort.length);
 				AllSorts.bubbleSort(AllSorts.bubSort);
-				
-				
+				PrintSorted.lastPrint();
 				
 				
 				

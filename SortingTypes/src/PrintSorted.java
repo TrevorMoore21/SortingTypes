@@ -7,6 +7,7 @@ public class PrintSorted
 		{
 			
 			Collections.sort(AllSorts.time, new TimeSorter());
+			
 			for (FinalTimes t: AllSorts.time)
 				{
 					System.out.println(t.getSortName() + "   " + t.getFinalTime());

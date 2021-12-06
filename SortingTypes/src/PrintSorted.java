@@ -1,4 +1,5 @@
 import java.util.Collections;
+import java.io.*;
 
 public class PrintSorted
 	{
@@ -10,7 +11,7 @@ public class PrintSorted
 			
 			for (FinalTimes t: AllSorts.time)
 				{
-					System.out.println(t.getSortName() + "   " + t.getFinalTime());
+					System.out.printf("%-30s\n", t.getSortName() + "\t" + t.getFinalTime());
 				}
 		}
 		

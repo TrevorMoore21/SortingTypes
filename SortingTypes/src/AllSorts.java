@@ -168,7 +168,7 @@ public class AllSorts
 		//merge sort
 		static void merge(int[] mergeSort, int arraySize)
 			{
-				double start = System.nanoTime();
+				//double start = System.nanoTime();
 				
 				if (arraySize < 2)
 					{
@@ -199,9 +199,9 @@ public class AllSorts
 				// Calling the merge method on each subdivision
 				merge(left_mergeSort, mid);
 			
-				 	double end = System.nanoTime();
-				 	double elapsedTime = (end - start) / 1000000;
-				 	time.add(new FinalTimes("Merge Sort", elapsedTime));
+//				 	double end = System.nanoTime();
+//				 	double elapsedTime = (end - start) / 1000000;
+//				 	time.add(new FinalTimes("Merge Sort", elapsedTime));
 					 //System.out.println("Merge Sort run time:              " + elapsedTime);
 			}
 		

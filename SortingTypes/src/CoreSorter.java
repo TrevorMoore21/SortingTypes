@@ -10,7 +10,13 @@ public class CoreSorter
 				AllSorts.selectionSort(AllSorts.selSort);
 				AllSorts.insertionSort(AllSorts.inSort);
 				AllSorts.qsort(AllSorts.qSort);
+				
+					double start = System.nanoTime();
 				AllSorts.merge(AllSorts.mergeSort, AllSorts.mergeSort.length);
+					double end = System.nanoTime();
+					double elapsedTime = (end - start) / 1000000;
+					AllSorts.time.add(new FinalTimes("Merge Sort", elapsedTime));
+				
 				AllSorts.bubbleSort(AllSorts.bubSort);
 				PrintSorted.lastPrint();
 				
